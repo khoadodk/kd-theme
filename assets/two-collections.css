@@ -1,0 +1,109 @@
+.collections {
+    margin: 200px 0;
+}
+
+.collections .row {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.collections .row a {
+    text-decoration: none;
+}
+
+.collections .left-c {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.collections .left-c .left-c-img {
+    position: relative;
+    width: 100%;
+}
+
+.collections .left-c .left-c-img .overlay {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    z-index: 999;
+    transition: opacity 0.5s ease;
+}
+
+.collections .left-c .left-c-img .overlay:hover {
+    opacity: 0;
+}
+
+.collections .left-c .left-c-img img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.collections .left-c .collection-title {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.collections .left-c .collection-title span {
+    transform: translate3d(-25px, 50px, 0);
+}
+
+.collections .right-c {
+    width: 100%;
+    height: 100%;
+}
+
+.collections .right-c:hover .right-c-img img {
+    transform: scale(1.2);
+
+}
+
+.collections .right-c .right-c-bg {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.collections .right-c .right-c-bg .right-c-img {
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+}
+
+.collections .right-c .right-c-bg .right-c-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 2s ease;
+}
+
+.collections .right-c .right-c-bg .right-c-img .collection-title span {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;
+    transform: translate3d(-68px, -100px, 0);
+    position: absolute;
+}
+
+body {
+    line-height: 0 !important;
+}
