@@ -14,6 +14,7 @@
     font-weight: 700;
     text-transform: capitalize;
     margin-bottom: 50px;
+
 }
 
 .products-group .product-bg {
@@ -56,6 +57,7 @@
     text-align: center;
     margin-bottom: 30px;
     color: #faf745;
+    line-height: 2;
 }
 
 .products-group .product-bg .overlay .product-price {

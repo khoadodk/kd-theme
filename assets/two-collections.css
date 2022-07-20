@@ -1,5 +1,6 @@
 .collections {
-    margin: 200px 0;
+    margin: 0;
+    height: 60vh
 }
 
 .collections .row {
@@ -22,6 +23,7 @@
 .collections .left-c .left-c-img {
     position: relative;
     width: 100%;
+    height: 100%;
 }
 
 .collections .left-c .left-c-img .overlay {
@@ -30,7 +32,7 @@
     width: 100%;
     height: 100%;
     opacity: 0.3;
-    z-index: 999;
+    z-index: 2;
     transition: opacity 0.5s ease;
 }
 
@@ -40,29 +42,25 @@
 
 .collections .left-c .left-c-img img {
     width: 100%;
-    height: 500px;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
 .collections .left-c .collection-title {
-    display: flex;
-    height: 100%;
-    width: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
-    justify-content: center;
-    align-items: flex-end;
-    flex-direction: column;
+    top: 50%;
+    left: 50%;
     font-size: 3.5rem;
     font-weight: 700;
     text-transform: uppercase;
+    z-index: 3;
 }
 
-.collections .left-c .collection-title span {
-    transform: translate3d(-25px, 50px, 0);
+.collections .left-c .collection-title:hover .overlay {
+    opacity: 0;
 }
+
 
 .collections .right-c {
     width: 100%;
@@ -76,7 +74,7 @@
 }
 
 .collections .right-c .right-c-bg {
-    height: 500px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,14 +82,13 @@
 }
 
 .collections .right-c .right-c-bg .right-c-img {
-    height: 300px;
-    width: 300px;
+    height: 50%;
+    width: 50%;
     overflow: hidden;
 }
 
 .collections .right-c .right-c-bg .right-c-img img {
     height: 100%;
-    width: 100%;
     object-fit: cover;
     transition: all 2s ease;
 }
