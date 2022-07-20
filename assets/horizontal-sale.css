@@ -43,6 +43,5 @@
 }
 
 .horizontal-sale .overlay a:hover {
-    color: black;
     background: var(--highlight-color);
 }

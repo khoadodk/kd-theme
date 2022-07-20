@@ -1,0 +1,49 @@
+{{ 'products-group.css' | asset_url | stylesheet_tag }}
+
+{% assign collection = collections[section.settings.collection] %}
+
+<section class="products-group">
+  <h2>{{ collection.title }}</h2>
+  <div class="container">
+    <div class="row">
+    {% for product in collection.products limit: section.settings.max_products %}
+        <div class="col-md-6 col-lg-3">
+        <a href="{{ product.url }}" class="product-bg">
+          <img src="{{ product.featured_image | img_url: '350x' }}" alt="" class="product-img" />
+
+          <div class="overlay">
+            <div class="product-title">{{ product.title }}</div>
+            <div class="product-price">{{ product.price | money_with_currency }}</div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+   "name":"Products Group",
+   "settings":[
+        {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+        },
+
+        {
+            "type": "number",
+            "id": "max_products",
+            "label": "Maximum products",
+            "default": 8
+        }
+   ],
+   "presets":[
+      {
+         "name":"Products Group",
+         "category":"Collection"
+      }
+   ]
+}
+{% endschema %}
