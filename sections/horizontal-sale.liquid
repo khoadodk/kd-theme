@@ -1,0 +1,46 @@
+{{ 'horizontal-sale.css' | asset_url | stylesheet_tag }}
+
+{% assign collection = collections[section.settings.collection] %}
+{% assign bgColor = section.settings.collection_bg_color %}
+{% assign percent = section.settings.percent %}
+{% assign textColor= section.settings.text_color %}
+
+
+<section class="horizontal-sale" style="background: url('{{ collection.image | img_url: '1600x' }}')">
+  <div class="overlay" style="background: {{ bgColor | color_modify: 'alpha', 0.6 }}">
+    <span class="percent-number"> {{ percent }}% </span>
+    <span class="title"> OFF SALE </span>
+    <a href="{{ collection.url }}"> View </a>
+  </div>
+</section>
+
+{% schema %}
+{
+   "name":"Horizontal Sale",
+   "settings":[
+        {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection on sale"
+        },
+        {
+            "type": "text",
+            "id": "percent",
+            "default": "50",
+            "label": "Sale percent"
+        },
+        {
+            "type": "color",
+            "id": "collection_bg_color",
+            "label": "Background color",
+            "default": "#000000"
+        }
+   ],
+   "presets":[
+      {
+         "name":"Horizontal Sale",
+         "category":"Collection"
+      }
+   ]
+}
+{% endschema %}
