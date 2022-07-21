@@ -1,11 +1,14 @@
 .products-group {
     padding: 50px 0 0 0;
     overflow: hidden;
-    background-color: #f4f7fd;
 }
 
 .products-group div[class*="col"] {
     margin-bottom: 50px;
+}
+
+.products-group div[class*="col"] a {
+    border: 1px solid black
 }
 
 .products-group h2 {

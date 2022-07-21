@@ -113,3 +113,29 @@
     font-weight: 700;
     top: 20%
 }
+
+@media (max-width: 768px) {
+
+    .jumbo .bg-image,
+    .jumbo .bg-video {
+        height: 100%;
+        width: auto;
+    }
+
+    .jumbo .store-info {
+        width: 100%;
+        height: 25%
+    }
+}
+
+@media (max-width: 545px) {
+    .jumbo .titles {
+        width: 100%;
+        text-align: center;
+    }
+
+    .jumbo .titles h1,
+    .jumbo .titles h2 {
+        transform: none;
+    }
+}

@@ -1,6 +1,6 @@
 .collections {
     margin: 0;
-    height: 60vh
+    height: 60vh;
 }
 
 .collections .row {
@@ -53,6 +53,7 @@
     left: 50%;
     font-size: 3.5rem;
     font-weight: 700;
+    line-height: 1.5;
     text-transform: uppercase;
     z-index: 3;
 }
@@ -105,4 +106,10 @@
 
 body {
     line-height: 0 !important;
+}
+
+@media (max-width:768px) {
+    .collections {
+        height: auto;
+    }
 }

@@ -2,6 +2,9 @@
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+<!-- product group custome css -->
+{{ 'products-group.css' | asset_url | stylesheet_tag }}
+
 
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
@@ -97,30 +100,25 @@
         {%- else -%}
           <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
             <div class="loading-overlay gradient"></div>
-    
-            <ul id="product-grid" data-id="{{ section.id }}" class="
-              grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
-              grid--{{ section.settings.columns_desktop }}-col-desktop">
-              {%- for product in collection.products -%}
-                {% assign lazy_load = false %}
-                {%- if forloop.index > 2 -%}
-                  {%- assign lazy_load = true -%}
-                {%- endif -%}
-                <li class="grid__item">
-                  {% render 'card-product',
-                    card_product: product,
-                    media_aspect_ratio: section.settings.image_ratio,
-                    show_secondary_image: section.settings.show_secondary_image,
-                    show_vendor: section.settings.show_vendor,
-                    show_rating: section.settings.show_rating,
-                    lazy_load: lazy_load,
-                    show_quick_add: section.settings.enable_quick_add,
-                    section_id: section.id
-
-                  %}
-                </li>
-              {%- endfor -%}
-            </ul>
+            <!-- COLLECTION GROUP -->
+            <div class="products-group">
+              <div class="container">
+                <div class="row">
+                {%- for product in collection.products -%}
+                <div class="col-md-6 col-lg-3">
+                  <a href="{{ product.url }}" class="product-bg">
+                    <img src="{{ product.featured_image | img_url: '350x' }}" alt="" class="product-img" />
+          
+                    <div class="overlay">
+                      <div class="product-title">{{ product.title }}</div>
+                      <div class="product-price">{{ product.price | money_with_currency }}</div>
+                    </div>
+                  </a>
+                </div>
+                {%- endfor -%}
+              </div>
+            </div>
+        </div>
     
             {%- if paginate.pages > 1 -%}
               {% render 'pagination', paginate: paginate, anchor: '' %}
