@@ -1,0 +1,48 @@
+.collection-hero {
+    padding: 0;
+    margin: 0 0 5rem 0;
+    width: 100%;
+    height: 40vh;
+    position: relative;
+}
+
+.collection-hero__title {
+    position: absolute;
+    z-index: 999;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+}
+
+.collection-hero__image-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.collection-hero__image-container img {
+    position: relative;
+    width: 100%;
+    background-position: 50% 75%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+
+.collection-hero__image-container .overlay {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0.3;
+    z-index: 2;
+    transition: opacity 0.5s ease;
+}
+
+.collection-hero__image-container .overlay:hover {
+    opacity: 0;
+}
