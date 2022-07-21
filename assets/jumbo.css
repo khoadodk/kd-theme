@@ -116,8 +116,7 @@
 
 @media (max-width: 768px) {
 
-    .jumbo .bg-image,
-    .jumbo .bg-video {
+    .jumbo .bg-image {
         height: 100%;
         width: auto;
     }
@@ -126,12 +125,11 @@
         width: 100%;
         height: 25%
     }
-}
 
-@media (max-width: 545px) {
     .jumbo .titles {
         width: 100%;
         text-align: center;
+        top: -30%;
     }
 
     .jumbo .titles h1,
